@@ -17,12 +17,13 @@ struct ContentView: View {
                     .onTapGesture {
                         self.viweModel.choose(card: card)
                 }
+                
             }
         
         }
         .padding()
         .foregroundColor(.orange)
-        .font(.largeTitle)
+        .font((viweModel.cards.count > 4) ? .title : .largeTitle)
     }
 }
 
@@ -44,6 +45,7 @@ struct CardView: View {
             }
             
         }
+        .aspectRatio(2/3, contentMode: .fit)
     }
 }
 
